@@ -1,7 +1,7 @@
 = Pflichtenheft Leonie
 // Metadata
 Jonas Dorfinger, Sebastian Scholl, Lukas Starka, Nina Weissengruber, Jonas Wiesinger
-1.0, 20-01-2020
+0.1, 20-01-2020
 
 // Settings
 :source-highlighter: coderay
