@@ -1,6 +1,6 @@
 = Pflichtenheft Leonie
 // Metadata
-Sebastian Scholl <scholl.sebastian@gmx.at>
+Jonas Dorfinger, Sebastian Scholl, Lukas Starka, Nina Weissengruber, Jonas Wiesinger
 1.0, 20-01-2020
 
 // Settings
@@ -16,7 +16,7 @@ Sebastian Scholl <scholl.sebastian@gmx.at>
 Version: {revnumber} +
 Version Date: {revdate} +
 Version Notes: Erster Vorschlag +
-Author: {Author} {email}
+Authors: {Author}
 
 ++++
 <link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -45,8 +45,6 @@ Leonie kann bis jetzt nur vordefinierte Antworten geben. Wenn Leonie keine Antwo
 Wenn Gäste die Schule besuchen, finden sie oft den richtigen Raum des gesuchten Professors nicht. Außerdem wirkt Leonie nicht sehr "menschlich", wenn man mit ihr spricht.
 
 == Aufgabenstellung
-
-Wenn Gäste die Schule besuchen, finden sie oft den richtigen Raum des gesuchten Professors nicht. Außerdem wirkt Leonie nicht sehr "menschlich", wenn man mit ihr spricht.
 
 === Funktionale Anforderungen
 
@@ -78,79 +76,52 @@ rectangle Leonie {
 }
 ----
 
-==== Use-Case 1
-
-===== Charakterisierende Informationen Use-Case 1
-
-[cols=2]
-|===
-| Übergeordneter elementarer Geschäftsprozess:
-| Prozess-ID: <elementarer Geschäftsprozess (verweist auf Abschnitt „2.1.5 Beschreibung der Geschäftsprozesse“)>
-
-| Ziel des Use Cases:
-| <Ausführliche Beschreibung des Zieles des Use Cases>
-
-| Umgebende Systemgrenze:
-| <System, das betrachtet wird (Systemgrenze im Diagramm des vorigen Abschnittes)>
-
-| Vorbedingung:
-| <Was muss garantiert werden, damit der Use Case durchgeführt werden kann?>
-
-| Nachbedingung bei erfolgreicher Ausführung:
-| <Was muss sichergestellt werden für eine erfolgreiche Ausführung des Use Case>
-
-| Beschreibung:
-a|
-* Erste Aktion
-* Zweite Aktion
-* ...
-
-| Beteiligte Nutzer:
-| <Rollenname>: Beschreibung des Nutzers, der mit dem System interagiert. Nutzer können auch andere Systeme sein.>
-
-| Auslösendes Ereignis:
-| <Handlung oder Zeitpunkt, die Use Case auslöst bzw. zu dem er beginnt>
-|===
-
-===== GUI für den Aufruf des Use-Case 1
-
-==== Use-Case 2
-
-...
-
-TIP: Dieser Abschnitt muß als Template für jeden Use Case aus dem vorigen Abschnitt wiederholt werden.
-
 === Nicht-funktionale Anforderungen
 
 Typen von Produktcharakteristiken
 
 Typ USE: 		Benutzbarkeitsanforderung
 
-Die in Abschnitt 1 beschriebene Zielgruppe liegt diesen Anforderungen zugrunde. Wie muß die Software beschaffen sein, damit diese Zielgruppe gerne damit arbeitet?
-Beispiel: Die Software soll flexibel für unterschiedliche Arbeitsweisen einsetzbar sein.
-ODER
-Die Software soll dem Erscheinungsbild anderer Produkte des Herstellers
-entsprechen.
+Das Projekt muss intuitiv steuerbar sein. Die grafische Oberfläche soll dabei ansprechend
+sein. Unter anderem soll die grafische Oberfläche genau anzeigen, wann man etwas sagen kann und soll dann die Antwort noch einmal zusätzlich anzeigen. Außerdem
+bekommt man bei der Oberfläche eine Hilfe und einem werden mögliche Kommandos vorgeschlagen, wenn man
+nicht weiß, was man sagen soll.
 
 Typ EFFIZIENZ: 	Effizienzanforderung
 
-Hier geht es sowohl um Laufzeit- als auch um Speichereffizienz. Was wird unter dem sparsamen Einsatz dieser Ressourcen verstanden?
-Beispiel: Die Berechnung darf nicht länger als 0,25 Sekunden dauern.
+Ziel ist es, die Intentionen des Benutzers auf einem eigenen Server in Leonding zu ermitteln.
+Derzeit wird nämlich ein Server von Google, welcher in Amerika stationiert ist, verwendet.
+Generell liegt die Anforderung also darin, dass die Antwort schnell erfolgt.
 
 Typ PFLEGE:	Wartbarkeits- und Portierbarkeitsanforderung
 
-Welcher Grad an Änderbarkeit wird gefordert? Hier werden, soweit wie möglich, kommende Anpassungen und Erweiterungen vorhergesehen.
-Beispiel: Das Produkt soll später auch in englischer Sprache verfügbar sein.
+Es ist von großer Bedeutung, dass die Wartbarkeit von Leonie gewährleistet ist, da das Projekt sich
+stets weiter entwickelt und neue Systeme eingebunden werden. Die bereits verwendeten Sprachen Python, HTML, CSS, JavaScript, VueJS und Node sind grundsätzlich platformunabhängig.
+Ein Problem der Portabilität liegt in C#, da dies eine von Microsoft entwickelte Sprache ist und somit möglicherweise
+auf einem Linux basierten Betriebssystem nicht ausführbar ist.
 
 Typ SICHER:	Sicherheitsanforderung
 
-Zu den Sicherheitsanforderungen gehören die Aspekte Vertraulichkeit, Datenintegrität und Verfügbarkeit. Wie sehr müssen die Daten vor dem Zugriff durch Dritte geschützt werden? Ist es entscheidend, die Korrektheit der erfassten Daten und ihre Konsistenz zu gewährleisten? Dürfen Systemausfälle vorkommen?
-Beispiel: Das System muss gewährleisten, dass Daten nie verändert werden können.
+Dadurch, dass das Projekt eine Gesichtserkennung unterstützt, muss die Kamera geschützt werden, um
+einen Zugriff Dritter auf die Bilder zu verhindern. Zusätzlich gibt es gespeicherte Bilder von Personen, welche Leonie erkennen
+und begrüßen kann. Diese Bilder gehören ebenfalls geschützt, weil diese persistent gespeichert sind.
 
 Typ LEGAL:		Gesetzliche Anforderung
-Welche Standards und Gesetze müssen beachtet werden?
-Beispiel: Das Produkt muss die ISO 9000 Norm erfüllen.
+
+Es muss auf die DSGVO geachtet werden, aufgrund der gemachten Bilder.
 
 == Zielsetzung
 
 Leonie soll externen Besuchern Wegbeschreibungen zu den Räumen der Lehrer geben. Außerdem soll Leonie "menschlicher" wirken, wenn man mit ihr redet.
+
+== Mengengerüst
+
+=== Gleichzeitige User
+
+Momentan: Nur ein User zu einer Zeit
+
+Ziel: Mehrere Bildschirme mit Leonie und bei jedem Bildschirm ein User
+
+=== Module
+
+Aufgrund der MQTT-Struktur können unbegrenzt Module hinzugefügt werden.
