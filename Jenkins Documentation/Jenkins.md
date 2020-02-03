@@ -1,4 +1,4 @@
-# [Jenkins](https://jenkins.vm81.htl-leonding.ac.at/login)
+# [Jenkins](https://jenkins.vm81.htl-leonding.ac.at)
 
 ## Was macht Jenkins?
 
