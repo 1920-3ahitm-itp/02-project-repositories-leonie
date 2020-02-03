@@ -18,7 +18,7 @@
 
 [Projektstrukturplan](./Projektstrukturplan/Projektstrukturplan.png)
 
-[Pflichtenheft](./Pflichtenheft/Pflichtenheft.adoc)
+[Pflichtenheft](./Pflichtenheft/Pflichtenheft.pdf)
 
 [Jenkins Documentation](./Jenkins%20Documentation/Jenkins.md)
 
