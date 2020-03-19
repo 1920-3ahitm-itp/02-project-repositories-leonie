@@ -6,7 +6,7 @@
 
 [Sebastian Scholl](https://github.com/schollsebastian)
 
-[Luaks Starka](https://github.com/StarkaLukas)
+[Lukas Starka](https://github.com/StarkaLukas)
 
 [Nina Weissengruber](https://github.com/weissengruberNina)
 
