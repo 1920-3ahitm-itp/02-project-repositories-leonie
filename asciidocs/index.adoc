@@ -1,0 +1,127 @@
+= Leonie
+Jonas Dorfinger
+0.1, 2020-03-15
+:sourcedir: ../src/main/java
+:icons: font
+:toc: left
+
+== Pflichtenheft Leonie
+
+=== Beschreibung der Ausgangssituation
+
+Leonie ist ein künstlich intelligenter Sprachassistent. Sie kann auf bestimmte definierte Fragen definierte Antworten geben oder im Internet nach einer Antwort suchen
+
+=== Istzustand
+
+Leonie kann bis jetzt nur vordefinierte Antworten geben. Wenn Leonie keine Antwort auf eine Frage hat, sucht sie im Internet nach einer Antwort.
+
+==== Beschreibung der Geschäftsprozesse
+
+* Auftritte auf diversen Events
+** z.B.: OÖ. Zukunftssymposium 2019, Neujahrsveranstaltung der Stadt Leonding
+* Humanisierung von Leonie
+** Das Reden mit Leonie soll nicht mehr so wirken, als rede man mit einem Roboter
+* Ambilight und Gefühle
+** Leonie soll beispielsweise wenn sie keine Antwort auf eine Frage hat, traurig sein und ihre Gefühle im 3D Modell darstellen. Darüber hinaus soll sich die Beleuchtung der Box dementsprechend ändern.
+
+=== Problemstellung
+
+Wenn Gäste die Schule besuchen, finden sie oft den richtigen Raum des gesuchten Professors nicht. Außerdem wirkt Leonie nicht sehr "menschlich", wenn man mit ihr spricht.
+
+=== Aufgabenstellung
+
+==== Funktionale Anforderungen
+
+===== Anwendungsfalldiagramm (Use-Case-Diagram)
+
+[plantuml]
+----
+left to right direction
+actor User
+actor ChatBot
+actor nodeBackend
+actor LeonieHolo
+actor FaceRecognition
+actor LeonieWeb
+actor MQTTServer
+actor Ambilight
+
+rectangle Leonie {
+    User -- (stelle Frage)
+    FaceRecognition -- (erkenne Gesicht)
+    ChatBot -- (erkenne Intention)
+    nodeBackend -- (suche Antwort)
+    LeonieHolo -- (stelle Leonie in 3D dar)
+    LeonieWeb -- (zeige Spracheingabe an)
+    LeonieWeb -- (schicke die Spracheingabe zum Backend)
+    LeonieWeb -- (gib die Antwort aus)
+    MQTTServer -- (vernetze die einzelnen Komponenten)
+    Ambilight -- (stelle Gefühle farblich dar)
+}
+----
+
+==== Nicht-funktionale Anforderungen
+
+Typen von Produktcharakteristiken
+
+Typ USE: 		Benutzbarkeitsanforderung
+
+Das Projekt muss intuitiv steuerbar sein. Die grafische Oberfläche soll dabei ansprechend
+sein. Unter anderem soll die grafische Oberfläche genau anzeigen, wann man etwas sagen kann und soll dann die Antwort noch einmal zusätzlich anzeigen. Außerdem
+bekommt man bei der Oberfläche eine Hilfe und einem werden mögliche Kommandos vorgeschlagen, wenn man
+nicht weiß, was man sagen soll.
+
+Typ EFFIZIENZ: 	Effizienzanforderung
+
+Ziel ist es, die Intentionen des Benutzers auf einem eigenen Server in Leonding zu ermitteln.
+Derzeit wird nämlich ein Server von Google, welcher in Amerika stationiert ist, verwendet.
+Generell liegt die Anforderung also darin, dass die Antwort schnell erfolgt.
+
+Typ PFLEGE:	Wartbarkeits- und Portierbarkeitsanforderung
+
+Es ist von großer Bedeutung, dass die Wartbarkeit von Leonie gewährleistet ist, da das Projekt sich
+stets weiter entwickelt und neue Systeme eingebunden werden. Die bereits verwendeten Sprachen Python, HTML, CSS, JavaScript, VueJS und Node sind grundsätzlich platformunabhängig.
+Ein Problem der Portabilität liegt in C#, da dies eine von Microsoft entwickelte Sprache ist und somit möglicherweise
+auf einem Linux basierten Betriebssystem nicht ausführbar ist.
+
+Typ SICHER:	Sicherheitsanforderung
+
+Dadurch, dass das Projekt eine Gesichtserkennung unterstützt, muss die Kamera geschützt werden, um
+einen Zugriff Dritter auf die Bilder zu verhindern. Zusätzlich gibt es gespeicherte Bilder von Personen, welche Leonie erkennen
+und begrüßen kann. Diese Bilder gehören ebenfalls geschützt, weil diese persistent gespeichert sind.
+
+Typ LEGAL:		Gesetzliche Anforderung
+
+Es muss auf die DSGVO geachtet werden, aufgrund der gemachten Bilder.
+
+=== Zielsetzung
+
+Leonie soll externen Besuchern Wegbeschreibungen zu den Räumen der Lehrer geben. Außerdem soll Leonie "menschlicher" wirken, wenn man mit ihr redet.
+
+=== Mengengerüst
+
+==== Gleichzeitige User
+
+Momentan: Nur ein User zu einer Zeit
+
+Ziel: Mehrere Bildschirme mit Leonie und bei jedem Bildschirm ein User
+
+==== Module
+
+Aufgrund der MQTT-Struktur können unbegrenzt Module hinzugefügt werden.
+
+== User-Stories
+
+Als User möchte ich Leonie fragen zu Google Maps stellen können um zu erfahren, wie lange ich bis zum nächsten Supermarkt brauche.
+
+Als User möchte ich Leonie Fragen zum Fahrplan der Linz AG Linien stellen können um zu erfahren, wann die nächste Straßenbahn losfährt.
+
+Als User möchte ich mit Leonie über die HTL Leonding reden können um zu erfahren was ich im Zweig "IT-Medientechnik" lernen kann.
+
+Als User möchte ich mit Leonie über die HTL Leonding reden können um zu erfahren wo sich der Klassenraum der 4ahitm befindet.
+
+Als User möchte ich mit Leonie über das Wetter reden können um zu erfahren wie das Wetter gerade in Schwanenstadt ist.
+
+Als Admin möchte ich ein Dashboard haben, bei dem man sehen kann, welche Clients verbunden sind um Diagnosen über deren Verbindungsstatus zu bekommen.
+
+Als User möchte ich bei der Google-Suche Bilder angezeigt bekommen anstelle von Links um einen besseren Überklick über die Ergebnisse zu bekommen.
