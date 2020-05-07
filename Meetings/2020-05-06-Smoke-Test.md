@@ -9,7 +9,9 @@ e2e Tests sind headlessclients
 Ein headlessclient ist ein Browser der keine Anzeige hat
 
 Nuxtjs e2e Test
-[https://nuxtjs.org/guide/development-tools/](https://nuxtjs.org/guide/development-tools/)
+<br>
+https://nuxtjs.org/guide/development-tools/
+<br>
 Nuxt js testing ist in  ```AVA```
 
 **Aufbau:**
