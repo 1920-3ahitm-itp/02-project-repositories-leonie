@@ -24,6 +24,8 @@
 
 [User Stories](./User%20Stories/User%20Stories.pdf)
 
+[Meetings](./Meetings)
+
 
 
 ## Links
