@@ -6,3 +6,5 @@
 <br>
 [2020-05-11-dev-branch-bug](./2020-05-11-dev-branch-bug.md)
 <br>
+[2020-06-12-Weather-API-Response.md](./2020-06-12-Weather-API-Response.md)
+<br>
