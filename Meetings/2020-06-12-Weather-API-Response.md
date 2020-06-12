@@ -19,3 +19,7 @@ Live logging was mit Leonie geredet wird (sinnvoll wenn Leonie bei längeren Eve
 Wenn Leonie nicht mehr weiter weiß, kann man Text von einem anderen Rechner ihr als Antwort senden.
 
 Anleitung um Leonie ins Schulnetz zu hängen und an die FritzBOX! für Events
+
+Leonie sollte in der Schule immer gestartet sein.
+
+Leonie soll ironische Antworten geben, leicht frech aber lustig und nicht gemein
