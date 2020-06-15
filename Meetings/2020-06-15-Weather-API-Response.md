@@ -10,7 +10,7 @@ Leonie Weather API aktuell noch eine REST API
 
 Die Wetterdaten werden aus Leonding ausgelesen, Stadt ist hard coded im Sourcecode
 
-zu prüfen: Chatbot Intents erstellen um Wetterdaten von einer spezifischen Stadt anzufordern
+zu prüfen: Chatbot Intents erstellen um Wetterdaten von einer spezifischen Stadt anzufordern (default Stadt: Leonding)
 
 als response wird eine ``HTML``-Seite zurückgeschickt
 
